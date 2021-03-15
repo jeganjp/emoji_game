@@ -22,8 +22,11 @@ function App() {
     <Route exact path='/start'>
       <Level1 />
     </Route>
-    <Route>
+    <Route exact path='/Level2'>
       <Level2/>
+    </Route>
+    <Route>
+      404! Not found
     </Route>
       </Switch>
   );

@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {HashRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+
+const options = {
+  position: 'top center',
+  timeout: 3000,
+  offset: '30px',
+  transition: 'scale'
+}
 
 ReactDOM.render(
   <HashRouter>
   <React.StrictMode>
-    <App/>
+  <AlertProvider template={AlertTemplate} {...options}>
+    <App />
+  </AlertProvider>
   </React.StrictMode>
   </HashRouter>,
   document.getElementById('root')
