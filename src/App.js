@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Ingame from './Ingame';
+import emojibg from './images/90479.jpg';
+import { Route, Switch } from 'react-router';
+import Level1 from './Level1';
+import Level2 from './Level2';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Switch>
+    <Route exact path='/'>
+    <div style={{display:'flex',
+    flexDirection:'column',
+    backgroundImage:`url(${emojibg})`,
+    justifyContent:'center',
+    justifyItems:'center',
+    alignItems:'center',
+    backgroundSize:'cover'}}>
+      <h1 >Welcome to emoji-game</h1>
+    <Ingame />
     </div>
+    </Route>  
+    <Route exact path='/start'>
+      <Level1 />
+    </Route>
+    <Route>
+      <Level2/>
+    </Route>
+      </Switch>
   );
 }
 
