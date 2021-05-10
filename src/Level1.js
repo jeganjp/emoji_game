@@ -43,7 +43,7 @@ const Level1 = () => {
         {alert.show("Not qualified to next round You score is "+answer)}
         if(answer===3)
         {
-            alert.show(<button><Link to='Level2'><span style={{color:'white'}}>Continue</span></Link></button>)
+            alert.show(<div>Click on continue to next level<button><Link to='Level2'><span style={{color:'white'}}>Continue</span></Link></button></div>)
         }
         
     }
